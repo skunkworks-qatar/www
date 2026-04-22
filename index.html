@@ -1,122 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skunkworks Qatar | Hardware & Software Solutions</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skunkworks Qatar | IT Solutions</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-        body {
-            line-height: 1.6;
-            color: #333;
-        }
+body {
+    line-height: 1.6;
+    color: #333;
+}
 
-        header {
-            background: #0a0f2c;
-            color: white;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+/* HEADER */
+header {
+    background: #0a0f2c;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+}
 
-        header h1 {
-            font-size: 24px;
-        }
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
 
-        nav a {
-            color: white;
-            margin-left: 20px;
-            text-decoration: none;
-            font-size: 14px;
-        }
+/* HERO */
+.hero {
+    background: linear-gradient(rgba(10,15,44,0.7), rgba(10,15,44,0.7)),
+    url('https://images.unsplash.com/photo-1518770660439-4636190af475');
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+}
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+.hero h2 {
+    font-size: 40px;
+}
 
-        .hero {
-            background: linear-gradient(rgba(10,15,44,0.7), rgba(10,15,44,0.7)),
-                        url('https://images.unsplash.com/photo-1518770660439-4636190af475');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 120px 20px;
-        }
+.btn {
+    background: #00c2ff;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+}
 
-        .hero h2 {
-            font-size: 40px;
-            margin-bottom: 20px;
-        }
+/* SECTION */
+.section {
+    padding: 60px 40px;
+    text-align: center;
+}
 
-        .hero p {
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
+.services, .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
 
-        .btn {
-            background: #00c2ff;
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
+.card {
+    background: #f4f4f4;
+    padding: 20px;
+    width: 280px;
+    border-radius: 10px;
+}
 
-        .section {
-            padding: 60px 40px;
-            text-align: center;
-        }
+/* FOOTER */
+footer {
+    background: #0a0f2c;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
 
-        .section h3 {
-            margin-bottom: 20px;
-            font-size: 28px;
-        }
-
-        .services {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .card {
-            background: #f4f4f4;
-            padding: 20px;
-            width: 280px;
-            border-radius: 10px;
-        }
-
-        .card h4 {
-            margin-bottom: 10px;
-        }
-
-        .about {
-            background: #fafafa;
-        }
-
-        footer {
-            background: #0a0f2c;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-        }
-
-        @media (max-width: 768px) {
-            .hero h2 {
-                font-size: 28px;
-            }
-        }
-    </style>
+/* WHATSAPP FLOAT */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px;
+}
+</style>
 </head>
 
 <body>
@@ -126,53 +105,85 @@
     <nav>
         <a href="#">Home</a>
         <a href="#services">Services</a>
-        <a href="#about">About</a>
+        <a href="#products">Products</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-    <h2>Reliable Hardware & Software Solutions</h2>
-    <p>Your trusted partner for IT procurement and technology solutions in Qatar</p>
+    <h2>Reliable IT Hardware & Software Solutions</h2>
+    <p>Your trusted partner in Qatar</p>
+    <br>
     <a href="#contact" class="btn">Get a Quote</a>
 </section>
 
+<!-- SERVICES -->
 <section id="services" class="section">
     <h3>Our Services</h3>
     <div class="services">
         <div class="card">
             <h4>Hardware Supply</h4>
-            <p>Servers, laptops, networking equipment, and enterprise hardware from top brands.</p>
+            <p>Servers, laptops, networking equipment.</p>
         </div>
         <div class="card">
-            <h4>Software Licensing</h4>
-            <p>Authorized reseller for business software, security solutions, and cloud services.</p>
+            <h4>Software Solutions</h4>
+            <p>Business software and cloud solutions.</p>
         </div>
         <div class="card">
-            <h4>IT Solutions</h4>
-            <p>Customized IT solutions tailored to your business needs and growth.</p>
+            <h4>IT Infrastructure</h4>
+            <p>End-to-end IT setup and support.</p>
         </div>
     </div>
 </section>
 
-<section id="about" class="section about">
-    <h3>About Us</h3>
-    <p>
-        Skunkworks Qatar is a leading technology reseller providing high-quality hardware and software solutions.
-        We work with trusted global vendors to deliver reliable, scalable, and cost-effective IT products to businesses across Qatar.
-    </p>
+<!-- PRODUCTS -->
+<section id="products" class="section">
+    <h3>Our Products</h3>
+    <div class="products">
+
+        <div class="card">
+            <h4>Sage Payroll</h4>
+            <p>Automated payroll and tax management.</p>
+        </div>
+
+        <div class="card">
+            <h4>Sage HR</h4>
+            <p>Employee management and HR tools.</p>
+        </div>
+
+        <div class="card">
+            <h4>Sage Accounting</h4>
+            <p>Invoices, reporting, and cash flow tracking.</p>
+        </div>
+
+    </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact" class="section">
     <h3>Contact Us</h3>
     <p>Email: info@skunkworksqatar.com</p>
-    <p>Phone: +974 XXXX XXXX</p>
+
+    <p>
+        Phone:
+        <a href="https://wa.me/97466770716" target="_blank">
+            Chat on WhatsApp
+        </a>
+    </p>
+
     <p>Location: Doha, Qatar</p>
 </section>
 
 <footer>
-    <p>&copy; 2026 Skunkworks Qatar. All rights reserved.</p>
+    <p>&copy; 2026 Skunkworks Qatar</p>
 </footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/97466770716?text=Hello%20I%20need%20IT%20solutions"
+   class="whatsapp" target="_blank">
+    💬
+</a>
 
 </body>
 </html>
