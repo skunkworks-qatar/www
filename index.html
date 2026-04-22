@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Skunkworks Qatar | IT Solutions</title>
 
+<!-- ✅ FAVICON -->
+<link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/skunkworks-qatar/www/8d20c9e0caef5cfcc1615a89b640155261356d77/logo.svg">
+
 <style>
 * {
     margin: 0;
@@ -22,15 +25,39 @@ body {
 header {
     background: #0a0f2c;
     color: white;
-    padding: 20px 40px;
+    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 nav a {
     color: white;
     margin-left: 20px;
     text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    text-decoration: underline;
 }
 
 /* HERO */
@@ -38,6 +65,7 @@ nav a {
     background: linear-gradient(rgba(10,15,44,0.7), rgba(10,15,44,0.7)),
     url('https://images.unsplash.com/photo-1518770660439-4636190af475');
     background-size: cover;
+    background-position: center;
     color: white;
     text-align: center;
     padding: 120px 20px;
@@ -45,6 +73,12 @@ nav a {
 
 .hero h2 {
     font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 25px;
 }
 
 .btn {
@@ -53,12 +87,18 @@ nav a {
     padding: 12px 25px;
     border-radius: 5px;
     text-decoration: none;
+    font-weight: bold;
 }
 
 /* SECTION */
 .section {
     padding: 60px 40px;
     text-align: center;
+}
+
+.section h3 {
+    margin-bottom: 20px;
+    font-size: 28px;
 }
 
 .services, .products {
@@ -73,6 +113,16 @@ nav a {
     padding: 20px;
     width: 280px;
     border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* ABOUT */
+.about {
+    background: #fafafa;
 }
 
 /* FOOTER */
@@ -95,13 +145,31 @@ footer {
     text-decoration: none;
     font-size: 20px;
 }
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    nav {
+        display: none;
+    }
+}
 </style>
 </head>
 
 <body>
 
 <header>
-    <h1>Skunkworks Qatar</h1>
+    <!-- ✅ LOGO -->
+    <div class="logo">
+        <a href="#">
+            <img src="https://raw.githubusercontent.com/skunkworks-qatar/www/8d20c9e0caef5cfcc1615a89b640155261356d77/logo.svg" alt="Skunkworks Qatar">
+            <h1>Skunkworks Qatar</h1>
+        </a>
+    </div>
+
     <nav>
         <a href="#">Home</a>
         <a href="#services">Services</a>
@@ -113,8 +181,7 @@ footer {
 <!-- HERO -->
 <section class="hero">
     <h2>Reliable IT Hardware & Software Solutions</h2>
-    <p>Your trusted partner in Qatar</p>
-    <br>
+    <p>Your trusted partner for IT procurement in Qatar</p>
     <a href="#contact" class="btn">Get a Quote</a>
 </section>
 
@@ -124,15 +191,15 @@ footer {
     <div class="services">
         <div class="card">
             <h4>Hardware Supply</h4>
-            <p>Servers, laptops, networking equipment.</p>
+            <p>Servers, laptops, networking equipment from top global brands.</p>
         </div>
         <div class="card">
             <h4>Software Solutions</h4>
-            <p>Business software and cloud solutions.</p>
+            <p>Business software, licensing, and cloud services.</p>
         </div>
         <div class="card">
             <h4>IT Infrastructure</h4>
-            <p>End-to-end IT setup and support.</p>
+            <p>Complete IT setup, deployment, and support services.</p>
         </div>
     </div>
 </section>
@@ -144,20 +211,29 @@ footer {
 
         <div class="card">
             <h4>Sage Payroll</h4>
-            <p>Automated payroll and tax management.</p>
+            <p>Automated payroll, tax calculation, and compliance.</p>
         </div>
 
         <div class="card">
             <h4>Sage HR</h4>
-            <p>Employee management and HR tools.</p>
+            <p>Employee management, leave tracking, and HR tools.</p>
         </div>
 
         <div class="card">
             <h4>Sage Accounting</h4>
-            <p>Invoices, reporting, and cash flow tracking.</p>
+            <p>Manage invoices, reporting, and financial operations.</p>
         </div>
 
     </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about">
+    <h3>About Us</h3>
+    <p>
+        Skunkworks Qatar is a trusted IT reseller delivering high-quality hardware and software solutions.
+        We partner with leading global vendors to provide scalable and cost-effective technology.
+    </p>
 </section>
 
 <!-- CONTACT -->
@@ -176,7 +252,7 @@ footer {
 </section>
 
 <footer>
-    <p>&copy; 2026 Skunkworks Qatar</p>
+    <p>&copy; 2026 Skunkworks Qatar. All rights reserved.</p>
 </footer>
 
 <!-- FLOATING WHATSAPP -->
