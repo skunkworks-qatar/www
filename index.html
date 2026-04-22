@@ -1,281 +1,897 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Skunkworks Qatar | Enterprise IT Solutions</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skunkworks Qatar | Software Solutions</title>
 
-<!-- FAVICON -->
-<link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/skunkworks-qatar/www/8d20c9e0caef5cfcc1615a89b640155261356d77/logo.svg">
+  <!-- Favicon -->
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="https://raw.githubusercontent.com/skunkworks-qatar/www/8d20c9e0caef5cfcc1615a89b640155261356d77/logo.svg"
+  />
 
-<!-- FONT -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
-<style>
-* {margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
-
-body {
-    background:#0b0f2a;
-    color:white;
-}
-
-/* HEADER */
-header {
-    position: sticky;
-    top: 0;
-    background: rgba(10,15,44,0.9);
-    backdrop-filter: blur(10px);
-    padding: 15px 40px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    z-index:1000;
-}
-
-.logo {
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.logo img {height:40px;}
-
-nav {
-    display:flex;
-}
-
-nav a {
-    color:white;
-    margin-left:20px;
-    text-decoration:none;
-}
-
-.menu-toggle {
-    display:none;
-    font-size:24px;
-    cursor:pointer;
-}
-
-/* HERO */
-.hero {
-    text-align:center;
-    padding:140px 20px;
-    background: radial-gradient(circle at top, #1a1f5a, #0b0f2a);
-}
-
-.hero h1 {font-size:42px;margin-bottom:10px;}
-.hero p {opacity:0.8;margin-bottom:25px;}
-
-.btn {
-    background:#00c2ff;
-    padding:14px 28px;
-    border-radius:6px;
-    color:white;
-    text-decoration:none;
-    font-weight:600;
-}
-
-/* PRODUCTS */
-.section {
-    padding:80px 40px;
-    text-align:center;
-}
-
-.section h2 {
-    margin-bottom:40px;
-    font-size:32px;
-}
-
-.grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
-}
-
-/* CARD */
-.card {
-    background:white;
-    color:#111;
-    border-radius:12px;
-    padding:20px;
-    transition:0.3s;
-}
-
-.card:hover {
-    transform:translateY(-8px);
-}
-
-.card img {
-    width:100%;
-    height:200px;
-    object-fit:contain;
-}
-
-.card h3 {
-    margin-top:15px;
-    font-size:18px;
-}
-
-.price {
-    margin-top:10px;
-    font-weight:bold;
-    color:#007bff;
-}
-
-/* CONTACT */
-.contact {
-    padding:60px;
-}
-
-/* FOOTER */
-footer {
-    background:#050816;
-    padding:20px;
-    text-align:center;
-}
-
-/* WHATSAPP */
-.whatsapp {
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    padding:15px;
-    border-radius:50%;
-    color:white;
-    text-decoration:none;
-    font-size:20px;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-
-    nav {
-        display:none;
-        position:absolute;
-        top:70px;
-        right:0;
-        background:#0a0f2c;
-        flex-direction:column;
-        width:200px;
-        padding:20px;
+  <style>
+    :root {
+      --bg: #08111f;
+      --bg-2: #0c1830;
+      --card: #ffffff;
+      --text: #eaf2ff;
+      --muted: #b8c3d9;
+      --dark: #0e1726;
+      --primary: #1ea7ff;
+      --primary-2: #0b7dd3;
+      --accent: #25d366;
+      --border: rgba(255,255,255,0.08);
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+      --radius: 18px;
+      --container: 1200px;
     }
 
-    nav.active {
-        display:flex;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(30, 167, 255, 0.14), transparent 28%),
+        radial-gradient(circle at top right, rgba(37, 211, 102, 0.08), transparent 20%),
+        linear-gradient(180deg, var(--bg-2), var(--bg));
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(14px);
+      background: rgba(8, 17, 31, 0.82);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-wrap {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: 0.2px;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.04);
+      padding: 4px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
     }
 
     nav a {
-        margin:10px 0;
+      color: var(--text);
+      font-weight: 500;
+      font-size: 0.96rem;
+      opacity: 0.92;
+      transition: opacity 0.2s ease;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: white;
+      padding: 11px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      box-shadow: 0 10px 30px rgba(30, 167, 255, 0.28);
     }
 
     .menu-toggle {
-        display:block;
+      display: none;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: #fff;
+      font-size: 1.3rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      cursor: pointer;
     }
-}
-</style>
-</head>
 
+    /* Hero */
+    .hero {
+      padding: 88px 0 56px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(2.2rem, 4vw, 4.25rem);
+      line-height: 1.05;
+      letter-spacing: -1.2px;
+      margin-bottom: 16px;
+    }
+
+    .hero-copy p {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 1.06rem;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: none;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-weight: 700;
+      font-size: 0.96rem;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: #fff;
+      box-shadow: 0 14px 34px rgba(30, 167, 255, 0.24);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.04);
+      color: #fff;
+      border: 1px solid var(--border);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      margin-bottom: 16px;
+      font-size: 1.1rem;
+    }
+
+    .hero-products {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .hero-mini {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 18px;
+      padding: 14px;
+      text-align: center;
+    }
+
+    .hero-mini img {
+      height: 110px;
+      width: 100%;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    .hero-mini span {
+      display: block;
+      font-size: 0.9rem;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /* Sections */
+    .section {
+      padding: 72px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 34px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.8rem, 3vw, 2.7rem);
+      margin-bottom: 10px;
+      letter-spacing: -0.7px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+    }
+
+    /* Features */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .feature h3 {
+      margin-bottom: 8px;
+      font-size: 1.08rem;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    /* Products */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .product-card {
+      background: var(--card);
+      color: var(--dark);
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .product-image {
+      background: #f4f7fb;
+      border-radius: 18px;
+      padding: 14px;
+      margin-bottom: 14px;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 220px;
+      object-fit: contain;
+    }
+
+    .product-title {
+      font-size: 1.12rem;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 8px;
+      min-height: 60px;
+    }
+
+    .product-desc {
+      color: #5d6a7c;
+      font-size: 0.94rem;
+      margin-bottom: 12px;
+    }
+
+    .price {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #0d2347;
+      margin-bottom: 14px;
+    }
+
+    .product-actions {
+      margin-top: auto;
+      display: grid;
+      gap: 12px;
+    }
+
+    .qty-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: #f6f8fc;
+      border-radius: 14px;
+      padding: 10px 12px;
+    }
+
+    .qty-row label {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .qty-row input {
+      width: 80px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #d9e1ee;
+      font-size: 0.96rem;
+      font-weight: 600;
+      outline: none;
+    }
+
+    .order-btn {
+      width: 100%;
+      border: none;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent), #18b856);
+      color: #fff;
+      padding: 14px 16px;
+      font-weight: 800;
+      font-size: 0.96rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .order-btn:hover {
+      transform: translateY(-1px);
+      opacity: 0.96;
+    }
+
+    /* Contact */
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .contact-card,
+    .contact-card-dark {
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card {
+      background: #fff;
+      color: var(--dark);
+    }
+
+    .contact-card-dark {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+    }
+
+    .contact-card h3,
+    .contact-card-dark h3 {
+      margin-bottom: 12px;
+      font-size: 1.25rem;
+    }
+
+    .contact-card p {
+      color: #5d6a7c;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .contact-item {
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: #f6f8fc;
+      color: #24324a;
+      font-weight: 600;
+    }
+
+    .contact-card-dark p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 22px 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    /* Floating WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25d366;
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      box-shadow: 0 16px 34px rgba(37, 211, 102, 0.35);
+      z-index: 1100;
+    }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .hero-grid,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 860px) {
+      nav {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 16px;
+        right: 16px;
+        background: rgba(8, 17, 31, 0.98);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: inline-grid;
+        place-items: center;
+      }
+
+      .hero-products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero {
+        padding-top: 64px;
+      }
+
+      .hero-copy h1 {
+        font-size: 2.1rem;
+      }
+
+      .hero-products,
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section,
+      .hero {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .nav-wrap {
+        min-height: 70px;
+      }
+
+      .brand span {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
 <body>
 
-<header>
-    <div class="logo">
-        <img src="https://raw.githubusercontent.com/skunkworks-qatar/www/8d20c9e0caef5cfcc1615a89b640155261356d77/logo.svg">
-        <strong>Skunkworks Qatar</strong>
-    </div>
+  <header>
+    <div class="container nav-wrap">
+      <a href="#" class="brand">
+        <img
+          src="https://raw.githubusercontent.com/skunkworks-qatar/www/8d20c9e0caef5cfcc1615a89b640155261356d77/logo.svg"
+          alt="Skunkworks Qatar logo"
+        />
+        <span>Skunkworks Qatar</span>
+      </a>
 
-    <nav id="nav">
+      <nav id="siteNav">
         <a href="#">Home</a>
         <a href="#products">Products</a>
+        <a href="#services">Services</a>
         <a href="#contact">Contact</a>
-    </nav>
+        <a class="nav-cta" href="https://wa.me/97466770716" target="_blank">WhatsApp</a>
+      </nav>
 
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-    <h1>Authorized Software Reseller</h1>
-    <p>Microsoft, Cloud & Enterprise Solutions in Qatar</p>
-    <a href="#contact" class="btn">Get a Quote</a>
-</section>
-
-<!-- PRODUCTS -->
-<section id="products" class="section">
-    <h2>Featured Products</h2>
-
-    <div class="grid">
-
-        <div class="card">
-            <img src="images/648db537-3326-4d96-b1af-724e30600a89.png">
-            <h3>Microsoft 365 Copilot</h3>
-            <p class="price">QAR 1,355</p>
-        </div>
-
-        <div class="card">
-            <img src="images/Microsoft_Business_Premium.webp">
-            <h3>Microsoft 365 Business Premium</h3>
-            <p class="price">QAR 943</p>
-        </div>
-
-        <div class="card">
-            <img src="images/IMG-0350.webp">
-            <h3>Office Professional Plus 2024</h3>
-            <p class="price">QAR 682</p>
-        </div>
-
-        <div class="card">
-            <img src="images/Windows11-Pro.webp">
-            <h3>Windows 11 Pro</h3>
-            <p class="price">QAR 233</p>
-        </div>
-
-        <div class="card">
-            <img src="images/Microsoft_365_Apps_for_Business.webp">
-            <h3>Microsoft 365 Apps</h3>
-            <p class="price">QAR 356</p>
-        </div>
-
-        <div class="card">
-            <img src="images/offic.webp">
-            <h3>Office 2021 Professional</h3>
-            <p class="price">QAR 347</p>
-        </div>
-
-        <div class="card">
-            <img src="images/BusinessStandard_904d5f77-a13d-4767-bd36-b0312b31d493.webp">
-            <h3>Microsoft 365 Standard</h3>
-            <p class="price">QAR 536</p>
-        </div>
-
-        <div class="card">
-            <img src="images/Microsoft_-_Business_Basic.webp">
-            <h3>Microsoft 365 Basic</h3>
-            <p class="price">QAR 257</p>
-        </div>
-
+      <button class="menu-toggle" type="button" aria-label="Open menu" onclick="toggleMenu()">☰</button>
     </div>
-</section>
+  </header>
 
-<!-- CONTACT -->
-<section id="contact" class="section contact">
-    <h2>Contact Us</h2>
-    <p>Email: info@skunkworksqatar.com</p>
-    <br>
-    <a href="https://wa.me/97466770716" class="btn">Chat on WhatsApp</a>
-</section>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>Authorized Software Reseller for Modern Businesses</h1>
+          <p>
+            Premium Microsoft and business software solutions for companies in Qatar.
+            Explore products, choose quantity, and place your order instantly on WhatsApp.
+          </p>
 
-<footer>
-    <p>&copy; 2026 Skunkworks Qatar</p>
-</footer>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#products">Browse Products</a>
+            <a class="btn btn-secondary" href="https://wa.me/97466770716?text=Hello%20I%20need%20a%20quote" target="_blank">Request a Quote</a>
+          </div>
 
-<a href="https://wa.me/97466770716" class="whatsapp">💬</a>
+          <div class="hero-meta">
+            <span>✔ Licensed software</span>
+            <span>✔ Business-ready solutions</span>
+            <span>✔ Fast WhatsApp ordering</span>
+          </div>
+        </div>
 
-<script>
-function toggleMenu(){
-    document.getElementById("nav").classList.toggle("active");
-}
-</script>
+        <div class="hero-card">
+          <h3>Popular Products</h3>
+          <div class="hero-products">
+            <div class="hero-mini">
+              <img src="images/648db537-3326-4d96-b1af-724e30600a89.png" alt="Microsoft 365 Copilot">
+              <span>Copilot</span>
+            </div>
+            <div class="hero-mini">
+              <img src="images/Microsoft_Business_Premium.webp" alt="Microsoft 365 Business Premium">
+              <span>Business Premium</span>
+            </div>
+            <div class="hero-mini">
+              <img src="images/Windows11-Pro.webp" alt="Windows 11 Pro">
+              <span>Windows 11 Pro</span>
+            </div>
+            <div class="hero-mini">
+              <img src="images/BusinessStandard_904d5f77-a13d-4767-bd36-b0312b31d493.webp" alt="Microsoft 365 Business Standard">
+              <span>Business Standard</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Why Choose Skunkworks Qatar</h2>
+          <p>We help businesses source trusted software solutions with quick communication and simple ordering.</p>
+        </div>
+
+        <div class="features">
+          <div class="feature">
+            <h3>Business Software</h3>
+            <p>Microsoft productivity, operating systems, office suites, and cloud-ready licensing solutions.</p>
+          </div>
+          <div class="feature">
+            <h3>Fast Ordering</h3>
+            <p>Customers can select quantity and send a ready-made order directly through WhatsApp in seconds.</p>
+          </div>
+          <div class="feature">
+            <h3>Local Support</h3>
+            <p>Qatar-based contact flow for quotes, product inquiries, and business purchasing assistance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Featured Products</h2>
+          <p>Choose a product, set quantity, and place your order instantly.</p>
+        </div>
+
+        <div class="products-grid">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="images/648db537-3326-4d96-b1af-724e30600a89.png" alt="Microsoft 365 Copilot">
+            </div>
+            <h3 class="product-title">Microsoft 365 Copilot</h3>
+            <p class="product-desc">AI-powered productivity assistant for business workflows.</p>
+            <div class="price">QAR 1,355</div>
+            <div class="product-actions">
+              <div class="qty-row">
+                <label for="qty-copilot">Quantity</label>
+                <input id="qty-copilot" type="number" min="1" value="1">
+              </div>
+              <button class="order-btn" onclick="orderProduct('Microsoft 365 Copilot', 1355, 'qty-copilot')">
+                Order on WhatsApp
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">
+              <img src="images/Microsoft_Business_Premium.webp" alt="Microsoft 365 Business Premium">
+            </div>
+            <h3 class="product-title">Microsoft 365 Business Premium</h3>
+            <p class="product-desc">Advanced productivity, security, and device management.</p>
+            <div class="price">QAR 943</div>
+            <div class="product-actions">
+              <div class="qty-row">
+                <label for="qty-premium">Quantity</label>
+                <input id="qty-premium" type="number" min="1" value="1">
+              </div>
+              <button class="order-btn" onclick="orderProduct('Microsoft 365 Business Premium', 943, 'qty-premium')">
+                Order on WhatsApp
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">
+              <img src="images/IMG-0350.webp" alt="Office Professional Plus 2024">
+            </div>
+            <h3 class="product-title">Office Professional Plus 2024</h3>
+            <p class="product-desc">Latest professional Office suite for productivity and business use.</p>
+            <div class="price">QAR 682</div>
+            <div class="product-actions">
+              <div class="qty-row">
+                <label for="qty-office2024">Quantity</label>
+                <input id="qty-office2024" type="number" min="1" value="1">
+              </div>
+              <button class="order-btn" onclick="orderProduct('Office Professional Plus 2024', 682, 'qty-office2024')">
+                Order on WhatsApp
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">
+              <img src="images/Windows11-Pro.webp" alt="Windows 11 Pro">
+            </div>
+            <h3 class="product-title">Microsoft Windows 11 Pro</h3>
+            <p class="product-desc">Professional Windows edition for modern business environments.</p>
+            <div class="price">QAR 233</div>
+            <div class="product-actions">
+              <div class="qty-row">
+                <label for="qty-win11">Quantity</label>
+                <input id="qty-win11" type="number" min="1" value="1">
+              </div>
+              <button class="order-btn" onclick="orderProduct('Microsoft Windows 11 Pro', 233, 'qty-win11')">
+                Order on WhatsApp
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">
+              <img src="images/Microsoft_365_Apps_for_Business.webp" alt="Microsoft 365 Apps for Business">
+            </div>
+            <h3 class="product-title">Microsoft 365 Apps for Business</h3>
+            <p class="product-desc">Core Microsoft apps for teams that need productivity without extras.</p>
+            <div class="price">QAR 356</div>
+            <div class="product-actions">
+              <div class="qty-row">
+                <label for="qty-apps">Quantity</label>
+                <input id="qty-apps" type="number" min="1" value="1">
+              </div>
+              <button class="order-btn" onclick="orderProduct('Microsoft 365 Apps for Business', 356, 'qty-apps')">
+                Order on WhatsApp
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">
+              <img src="images/offic.webp" alt="Office Professional Plus 2021">
+            </div>
+            <h3 class="product-title">Office Professional Plus 2021</h3>
+            <p class="product-desc">Reliable Office productivity suite for business deployment.</p>
+            <div class="price">QAR 347</div>
+            <div class="product-actions">
+              <div class="qty-row">
+                <label for="qty-office2021">Quantity</label>
+                <input id="qty-office2021" type="number" min="1" value="1">
+              </div>
+              <button class="order-btn" onclick="orderProduct('Office Professional Plus 2021', 347, 'qty-office2021')">
+                Order on WhatsApp
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">
+              <img src="images/BusinessStandard_904d5f77-a13d-4767-bd36-b0312b31d493.webp" alt="Microsoft 365 Business Standard">
+            </div>
+            <h3 class="product-title">Microsoft 365 Business Standard</h3>
+            <p class="product-desc">Business productivity suite with collaboration and Office apps.</p>
+            <div class="price">QAR 536</div>
+            <div class="product-actions">
+              <div class="qty-row">
+                <label for="qty-standard">Quantity</label>
+                <input id="qty-standard" type="number" min="1" value="1">
+              </div>
+              <button class="order-btn" onclick="orderProduct('Microsoft 365 Business Standard', 536, 'qty-standard')">
+                Order on WhatsApp
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">
+              <img src="images/Microsoft_-_Business_Basic.webp" alt="Microsoft 365 Business Basic">
+            </div>
+            <h3 class="product-title">Microsoft 365 Business Basic</h3>
+            <p class="product-desc">Entry-level cloud productivity plan for growing businesses.</p>
+            <div class="price">QAR 257</div>
+            <div class="product-actions">
+              <div class="qty-row">
+                <label for="qty-basic">Quantity</label>
+                <input id="qty-basic" type="number" min="1" value="1">
+              </div>
+              <button class="order-btn" onclick="orderProduct('Microsoft 365 Business Basic', 257, 'qty-basic')">
+                Order on WhatsApp
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Contact Us</h2>
+          <p>Ready to order or need a quote for your business?</p>
+        </div>
+
+        <div class="contact-box">
+          <div class="contact-card">
+            <h3>Business Contact</h3>
+            <p>Get in touch directly for product inquiries and purchase requests.</p>
+
+            <div class="contact-list">
+              <div class="contact-item">Email: info@skunkworksqatar.com</div>
+              <div class="contact-item">Phone / WhatsApp: +974 6677 0716</div>
+              <div class="contact-item">Location: Doha, Qatar</div>
+            </div>
+          </div>
+
+          <div class="contact-card-dark">
+            <h3>Quick Order</h3>
+            <p>Use WhatsApp to send your order instantly with product name, quantity, and total price.</p>
+
+            <div class="contact-actions">
+              <a class="btn btn-primary" href="https://wa.me/97466770716?text=Hello%20I%20would%20like%20a%20quote" target="_blank">
+                Chat on WhatsApp
+              </a>
+              <a class="btn btn-secondary" href="mailto:info@skunkworksqatar.com">
+                Send Email
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      &copy; 2026 Skunkworks Qatar. All rights reserved.
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/97466770716" target="_blank" aria-label="Chat on WhatsApp">💬</a>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("siteNav").classList.toggle("active");
+    }
+
+    function orderProduct(productName, price, qtyInputId) {
+      const qtyInput = document.getElementById(qtyInputId);
+      let quantity = parseInt(qtyInput.value, 10);
+
+      if (!quantity || quantity < 1) {
+        quantity = 1;
+        qtyInput.value = 1;
+      }
+
+      const total = price * quantity;
+
+      const message =
+        "Hello, I want to order:%0A%0A" +
+        "Product: " + encodeURIComponent(productName) + "%0A" +
+        "Quantity: " + encodeURIComponent(quantity) + "%0A" +
+        "Unit Price: QAR " + encodeURIComponent(price) + "%0A" +
+        "Total: QAR " + encodeURIComponent(total);
+
+      const whatsappUrl = "https://wa.me/97466770716?text=" + message;
+      window.open(whatsappUrl, "_blank");
+    }
+  </script>
 </body>
 </html>
