@@ -8,19 +8,19 @@
 <!-- FAVICON -->
 <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/skunkworks-qatar/www/8d20c9e0caef5cfcc1615a89b640155261356d77/logo.svg">
 
-<!-- GOOGLE FONT -->
+<!-- FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 * {margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
 body {background:#0b0f2a;color:white;}
 
-/* NAVBAR */
+/* HEADER */
 header {
     position: sticky;
     top: 0;
+    background: rgba(10,15,44,0.85);
     backdrop-filter: blur(10px);
-    background: rgba(10,15,44,0.7);
     padding: 15px 40px;
     display:flex;
     justify-content:space-between;
@@ -28,16 +28,24 @@ header {
     z-index:1000;
 }
 
-.logo {display:flex;align-items:center;gap:10px;}
+.logo {
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
 .logo img {height:40px;}
+
+nav {
+    display:flex;
+}
 
 nav a {
     color:white;
     margin-left:20px;
     text-decoration:none;
-    font-size:14px;
 }
 
+/* MOBILE */
 .menu-toggle {
     display:none;
     font-size:24px;
@@ -51,8 +59,8 @@ nav a {
     background: radial-gradient(circle at top, #1a1f5a, #0b0f2a);
 }
 
-.hero h1 {font-size:48px;margin-bottom:20px;}
-.hero p {opacity:0.8;margin-bottom:30px;}
+.hero h1 {font-size:42px;margin-bottom:15px;}
+.hero p {opacity:0.8;margin-bottom:25px;}
 
 .btn {
     background:#00c2ff;
@@ -64,8 +72,15 @@ nav a {
 }
 
 /* SECTION */
-.section {padding:80px 40px;text-align:center;}
-.section h2 {margin-bottom:40px;font-size:32px;}
+.section {
+    padding:80px 40px;
+    text-align:center;
+}
+
+.section h2 {
+    margin-bottom:40px;
+    font-size:32px;
+}
 
 .grid {
     display:grid;
@@ -73,11 +88,11 @@ nav a {
     gap:25px;
 }
 
+/* CARD */
 .card {
     background: rgba(255,255,255,0.05);
-    padding:25px;
+    padding:20px;
     border-radius:12px;
-    backdrop-filter: blur(10px);
     transition:0.3s;
 }
 
@@ -86,11 +101,16 @@ nav a {
     background: rgba(255,255,255,0.1);
 }
 
-/* PRODUCT TAG */
-.tag {
-    display:inline-block;
+.card img {
+    width:100%;
+    height:180px;
+    object-fit:contain;
+    margin-bottom:15px;
+}
+
+.price {
     margin-top:10px;
-    font-size:12px;
+    font-weight:bold;
     color:#00c2ff;
 }
 
@@ -110,12 +130,34 @@ footer {
     padding:15px;
     border-radius:50%;
     color:white;
+    text-decoration:none;
 }
 
-/* MOBILE */
+/* MOBILE FIX */
 @media(max-width:768px){
-    nav {display:none;}
-    .menu-toggle {display:block;}
+
+    nav {
+        display:none;
+        position:absolute;
+        top:70px;
+        right:0;
+        background:#0a0f2c;
+        flex-direction:column;
+        width:200px;
+        padding:20px;
+    }
+
+    nav.active {
+        display:flex;
+    }
+
+    nav a {
+        margin:10px 0;
+    }
+
+    .menu-toggle {
+        display:block;
+    }
 }
 </style>
 </head>
@@ -130,7 +172,6 @@ footer {
 
     <nav id="nav">
         <a href="#">Home</a>
-        <a href="#services">Services</a>
         <a href="#products">Products</a>
         <a href="#contact">Contact</a>
     </nav>
@@ -138,70 +179,76 @@ footer {
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-    <h1>Enterprise IT. Simplified.</h1>
-    <p>Hardware, Software & Cloud Solutions for Modern Businesses</p>
+    <h1>Authorized Software Reseller</h1>
+    <p>Unlock powerful Microsoft & cloud solutions for your business</p>
     <a href="#contact" class="btn">Get a Quote</a>
 </section>
 
-<section id="services" class="section">
-    <h2>Services</h2>
-    <div class="grid">
-        <div class="card"><h3>Hardware Supply</h3><p>Dell, HP, Cisco & enterprise equipment.</p></div>
-        <div class="card"><h3>Software Licensing</h3><p>Authorized reseller of business software.</p></div>
-        <div class="card"><h3>Cloud & Infrastructure</h3><p>Secure, scalable cloud deployments.</p></div>
-    </div>
-</section>
-
+<!-- PRODUCTS -->
 <section id="products" class="section">
-    <h2>Solutions & Products</h2>
+    <h2>Featured Products</h2>
+
     <div class="grid">
 
         <div class="card">
-            <h3>Sage Payroll</h3>
-            <p>Automated payroll & compliance system.</p>
-            <span class="tag">HR & Payroll</span>
+            <img src="images/copilot.png">
+            <h3>Microsoft 365 Copilot</h3>
+            <p class="price">QAR 7,130</p>
         </div>
 
         <div class="card">
-            <h3>Sage 300 People</h3>
-            <p>Enterprise HR & workforce management.</p>
-            <span class="tag">Enterprise HR</span>
+            <img src="images/m365-premium.png">
+            <h3>Microsoft 365 Business Premium</h3>
+            <p class="price">QAR 4,964</p>
         </div>
 
         <div class="card">
-            <h3>Sage HR</h3>
-            <p>Cloud HR platform for growing teams.</p>
-            <span class="tag">Cloud HR</span>
+            <img src="images/office-2024.png">
+            <h3>Office Professional Plus 2024</h3>
+            <p class="price">QAR 3,587</p>
         </div>
 
         <div class="card">
-            <h3>Sage Accounting</h3>
-            <p>Smart accounting and financial insights.</p>
-            <span class="tag">Finance</span>
+            <img src="images/windows11.png">
+            <h3>Windows 11 Pro</h3>
+            <p class="price">QAR 1,228</p>
         </div>
 
         <div class="card">
-            <h3>Microsoft 365</h3>
-            <p>Business productivity & cloud collaboration.</p>
-            <span class="tag">Cloud</span>
+            <img src="images/m365-apps.png">
+            <h3>Microsoft 365 Apps</h3>
+            <p class="price">QAR 1,872</p>
         </div>
 
         <div class="card">
-            <h3>Cybersecurity Solutions</h3>
-            <p>Endpoint, firewall & threat protection.</p>
-            <span class="tag">Security</span>
+            <img src="images/office-2021.png">
+            <h3>Office 2021 Professional</h3>
+            <p class="price">QAR 1,826</p>
+        </div>
+
+        <div class="card">
+            <img src="images/m365-standard.png">
+            <h3>Microsoft 365 Standard</h3>
+            <p class="price">QAR 2,820</p>
+        </div>
+
+        <div class="card">
+            <img src="images/m365-basic.png">
+            <h3>Microsoft 365 Basic</h3>
+            <p class="price">QAR 1,353</p>
         </div>
 
     </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact" class="section">
-    <h2>Contact</h2>
+    <h2>Contact Us</h2>
     <p>Email: info@skunkworksqatar.com</p>
-    <p>
-        <a href="https://wa.me/97466770716" class="btn">Chat on WhatsApp</a>
-    </p>
+    <br>
+    <a href="https://wa.me/97466770716" class="btn">Chat on WhatsApp</a>
 </section>
 
 <footer>
@@ -212,8 +259,7 @@ footer {
 
 <script>
 function toggleMenu(){
-    const nav = document.getElementById("nav");
-    nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+    document.getElementById("nav").classList.toggle("active");
 }
 </script>
 
